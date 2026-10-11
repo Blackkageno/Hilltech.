@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hilltech Media Group — premium audio, video, photography, event coverage and digital content.">
+<meta name="theme-color" content="#050505">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Hilltech Media Group — Making Every Moment Memorable</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="hilltech-logo.png">
+<script type="module" src="app.js" defer></script>
+</head>
+<body>
+<div class="progress"></div>
+<header class="header">
+  <a class="brand" href="#home"><img src="hilltech-logo.png" alt="Hilltech Media Group"><span>HILLTECH</span></a>
+  <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#booking">Book</a><a class="nav-contact" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-copy reveal">
+    <p class="kicker">HILLTECH MEDIA GROUP • KENYA</p>
+    <h1>Make the moment.<br><em>Make it memorable.</em></h1>
+    <p class="lead">Premium audio, video and visual storytelling for brands, events, creators and people with a story worth telling.</p>
+    <div class="actions"><a class="btn gold" href="#booking">Book a Project <span>↗</span></a><a class="btn glass" href="#work">Explore Our Work</a></div>
+    <div class="micro-stats"><span><b>01</b> Creative direction</span><span><b>02</b> Production</span><span><b>03</b> Post-production</span></div>
+  </div>
+  <div class="hero-art reveal delay">
+    <div class="ring r1"></div><div class="ring r2"></div>
+    <div class="logo-frame"><img src="hilltech-logo.png" alt="logo"></div>
+    <div class="floating-card fc-one">● <span>LIVE PRODUCTION</span></div>
+    <div class="floating-card fc-two"><strong>4K</strong><span>Visuals</span></div>
+  </div>
+  <div class="scroll-cue">SCROLL <span>↓</span></div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-head reveal"><p class="kicker">WHAT WE CREATE</p><h2>Production with <em>purpose.</em></h2><p>From the first idea to the final export, Hilltech brings a human touch to every frame and every sound.</p></div>
+  <div class="services">
+    <article class="service reveal"><span class="number">01</span><div class="service-icon">◉</div><h3>Video Production</h3><p>Commercials, documentaries, reels, interviews, music visuals and cinematic storytelling.</p><a href="#booking">Start a video project →</a></article>
+    <article class="service reveal"><span class="number">02</span><div class="service-icon">◌</div><h3>Audio Production</h3><p>Voice, podcast, music and event audio captured, cleaned and finished professionally.</p><a href="#booking">Book audio →</a></article>
+    <article class="service reveal"><span class="number">03</span><div class="service-icon">✦</div><h3>Event Coverage</h3><p>Photography and video coverage for celebrations, church events, launches and conferences.</p><a href="#booking">Cover my event →</a></article>
+    <article class="service reveal"><span class="number">04</span><div class="service-icon">⌁</div><h3>Social Content</h3><p>High-impact short-form content engineered for Instagram, TikTok, YouTube and modern brands.</p><a href="#booking">Create content →</a></article>
+  </div>
+</section>
+
+<section id="work" class="section work-section">
+  <div class="section-head reveal"><p class="kicker">SELECTED WORK</p><h2>Stories that <em>stay.</em></h2></div>
+  <div id="portfolioGrid" class="portfolio-grid"></div>
+  <div class="center"><a class="btn glass" href="#booking">Have a project like this? Let's talk.</a></div>
+</section>
+
+<section id="about" class="section about">
+  <div class="about-visual reveal"><div class="about-logo"><img src="hilltech-logo.png" alt="Hilltech"></div></div>
+  <div class="about-copy reveal"><p class="kicker">THE HILLTECH WAY</p><h2>Technology meets the <em>human story.</em></h2><p>Hilltech Media Group exists to help people and brands preserve moments, communicate ideas and create content that feels real.</p><div class="values"><div><b>01</b><span>Creative</span></div><div><b>02</b><span>Professional</span></div><div><b>03</b><span>Human</span></div></div></div>
+</section>
+
+<section id="booking" class="section booking">
+  <div class="section-head reveal"><p class="kicker">PROJECT BOOKING</p><h2>Let's plan your <em>next move.</em></h2><p>Send your project brief and preferred date. This is a booking request; Hilltech confirms availability before the date is reserved.</p></div>
+  <form id="bookingForm" class="premium-form reveal">
+    <input class="honeypot" name="website" tabindex="-1" autocomplete="off">
+    <div class="form-grid">
+      <label>Name<input name="name" required maxlength="80" placeholder="Your name"></label>
+      <label>Email<input type="email" name="email" required maxlength="160" placeholder="you@example.com"></label>
+      <label>Phone<input name="phone" maxlength="30" placeholder="07xx xxx xxx"></label>
+      <label>Service<select name="service" required><option value="">Select service</option><option>Video Production</option><option>Audio Production</option><option>Event Coverage</option><option>Photography</option><option>Social Media Content</option><option>Post Production</option><option>Other</option></select></label>
+      <label>Date<input type="date" name="event_date" required></label>
+      <label>Preferred time<input type="time" name="event_time" required></label>
+      <label>Location<input name="location" required maxlength="160" placeholder="Event/project location"></label>
+      <label>Budget <span>(optional)</span><input name="budget" maxlength="80" placeholder="e.g. KSh 30,000–50,000"></label>
+      <label class="wide">Project details<textarea name="details" required maxlength="2500" rows="6" placeholder="Tell us what you want to create..."></textarea></label>
+    </div>
+    <button class="btn gold" type="submit">Send Booking Request <span>↗</span></button>
+    <p id="bookingStatus" class="status"></p>
+  </form>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="contact-copy reveal"><p class="kicker">CONTACT</p><h2>Ready when <em>you are.</em></h2><p>Have a question, a collaboration idea or a project that needs a creative team? Send us a message.</p></div>
+  <form id="contactForm" class="premium-form reveal">
+    <input class="honeypot" name="website" tabindex="-1" autocomplete="off">
+    <label>Name<input name="name" required maxlength="80"></label>
+    <label>Email<input type="email" name="email" required maxlength="160"></label>
+    <label>Phone<input name="phone" maxlength="30"></label>
+    <label>Message<textarea name="message" required maxlength="2000" rows="5"></textarea></label>
+    <button class="btn gold" type="submit">Send Message <span>↗</span></button>
+    <p id="contactStatus" class="status"></p>
+  </form>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="hilltech-logo.png" alt="">
+      <div>
+        <b>HILLTECH MEDIA GROUP</b>
+        <span>Making every moment memorable.</span>
+      </div>
+    </div>
+    
+    <!-- "Call Us" moved to the opposite side in the top header -->
+    <div class="footer-contact-direct">
+      <a href="tel:+254798844291" aria-label="Call Us">
+        <i class="fas fa-phone-alt"></i> Call Us: +254 798 844 291
+      </a>
+    </div>
+  </div>
+
+  <!-- Social & Messaging Links Bar -->
+  <div class="footer-socials">
+    <div class="social-group">
+      <a href="https://instagram.com/arnold_hmg" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://tiktok.com/@hilltech.media.gr" target="_blank" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+      <a href="https://youtube.com/@hilltechmediagroup" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://facebook.com/hillary.ossii" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="mailto:hilltechmediagroup@gmail.com" aria-label="Gmail">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://wa.me/254798844291?text=Hello%20Hilltech%20Media%20Group!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#booking">Book</a>
+      <a href="login.html">Admin</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copy">© <span id="year"></span> Hilltech Media Group</div>
+  </div>
+</footer>
+
+</body>
+</html>

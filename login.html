@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hilltech Admin Login</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <img src="hilltech-logo.png" alt="Hilltech">
+    <p class="eyebrow">SECURE ADMIN</p>
+    <h1>Welcome back.</h1>
+    <p class="muted">Sign in to manage Hilltech enquiries, bookings and portfolio.</p>
+    
+    <form id="loginForm">
+      <label>Email<input name="email" type="email" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button>Sign In</button>
+      <p id="status"></p>
+    </form>
+    
+    <a href="admin.html">← Back to website</a>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    // Your exact Firebase configuration from the console
+    const firebaseConfig = { 
+  apiKey : "AIzaSyCjFL4edy1fX9rprfCZ9-MYavdsk9hGJwc" , 
+  authDomain : "hilltech.firebaseapp.com" , 
+  databaseURL : "https://hilltech-default-rtdb.firebaseio.com" , 
+  projectId : "hilltech" , 
+  storageBucket : "hilltech.firebasestorage.app" , 
+  messagingSenderId : "406255325932" , 
+  appId : "1:406255325932:web:20191ba3bb7aec64100bc9" , 
+  measurementId : "G-9W4HF2FGL6" 
+};
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const statusEl = document.querySelector("#status");
+
+    document.querySelector("#loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = e.currentTarget.email.value;
+      const password = e.currentTarget.password.value;
+
+      statusEl.textContent = "Signing in...";
+      statusEl.className = "";
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        window.location.href = "admin.html";
+      } catch (err) {
+        statusEl.textContent = err.message;
+        statusEl.className = "error";
+      }
+    });
+  </script>
+</body>
+</html>

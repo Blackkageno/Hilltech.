@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liam Chen - Undergraduate Web Developer & Computer Science Student</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar and aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-zinc-950">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="text-xl font-bold tracking-tight bg-gradient-to-r from-brand-400 to-emerald-200 bg-clip-text text-transparent flex items-center space-x-2">
+                <span class="w-8 h-8 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 text-sm font-mono">&lt;/&gt;</span>
+                <span>Liam.dev</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-400">
+                <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-brand-400 transition-colors">Education & Experience</a>
+                <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- Status Badge -->
+                <div class="hidden sm:inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span>Seeking Internships</span>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Open menu" class="md:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-b border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-base font-medium text-zinc-300 hover:text-brand-400 mobile-link">About</a>
+            <a href="#skills" class="block py-2 text-base font-medium text-zinc-300 hover:text-brand-400 mobile-link">Skills</a>
+            <a href="#projects" class="block py-2 text-base font-medium text-zinc-300 hover:text-brand-400 mobile-link">Projects</a>
+            <a href="#experience" class="block py-2 text-base font-medium text-zinc-300 hover:text-brand-400 mobile-link">Education & Experience</a>
+            <a href="#contact" class="block py-2 text-base font-medium text-zinc-300 hover:text-brand-400 mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="pt-32 pb-20 md:pt-44 md:min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-brand-400 text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Junior CS Undergraduate @ UC Berkeley</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-zinc-100">
+                        Hi, I'm <span class="bg-gradient-to-r from-brand-400 to-emerald-200 bg-clip-text text-transparent">Liam Chen</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        An undergraduate developer passionate about building full-stack web applications, exploring distributed systems, and crafting clean user interfaces.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-zinc-950 font-semibold shadow-lg shadow-brand-500/20 transition-all text-center">
+                            Explore Projects <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 font-semibold transition-all text-center">
+                            Get in Touch
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start space-x-6 pt-6 text-zinc-400">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-xl"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-xl"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="mailto:liam.chen@example.com" class="hover:text-brand-400 transition-colors text-xl"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 bg-zinc-900 flex items-center justify-center group">
+                        <img src="https://placehold.co/400x400/18181b/22c55e?text=LC" alt="Liam Chen Portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex items-end p-6">
+                            <div class="space-y-1">
+                                <span class="text-xs uppercase tracking-widest text-brand-400 font-mono font-bold">Class of 2027</span>
+                                <h4 class="text-sm font-semibold text-zinc-200">B.S. Computer Science</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-zinc-900/50 border-y border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-3 font-mono">About Me</h2>
+                <h3 class="text-3xl font-extrabold tracking-tight">Student, Builder, and Lifelong Learner</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <h4 class="text-2xl font-bold text-zinc-200">Hello there! I'm Liam, studying Computer Science.</h4>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Currently in my third year pursuing a B.S. in Computer Science. My journey into tech started with tweaking game servers in high school and has since evolved into building robust full-stack applications, contributing to campus hackathons, and exploring cloud architectures.
+                    </p>
+                    <p class="text-zinc-400 leading-relaxed">
+                        When I'm not debugging asynchronous code or studying algorithms, you can find me leading the university's Web Development Club, mentoring junior students, or experimenting with generative AI tools.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-zinc-900 border border-zinc-800">
+                            <h5 class="text-3xl font-black text-brand-400 font-mono">3.85</h5>
+                            <p class="text-sm text-zinc-400 mt-1">Cumulative GPA</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-zinc-900 border border-zinc-800">
+                            <h5 class="text-3xl font-black text-brand-400 font-mono">15+</h5>
+                            <p class="text-sm text-zinc-400 mt-1">Projects Built</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-zinc-200">Web Development</h5>
+                        <p class="text-sm text-zinc-400">Building responsive, accessible web applications with modern frameworks like React, Next.js, and Tailwind CSS.</p>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-zinc-200">Backend & APIs</h5>
+                        <p class="text-sm text-zinc-400">Designing RESTful and GraphQL APIs using Node.js, Python, PostgreSQL, and Redis cache layers.</p>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-zinc-200">CS Fundamentals</h5>
+                        <p class="text-sm text-zinc-400">Strong coursework foundation in Data Structures, Algorithms, Operating Systems, and Computer Networks.</p>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-zinc-200">Leadership</h5>
+                        <p class="text-sm text-zinc-400">President of the Campus Web Dev Club, organizing workshops and hackathons for 150+ student members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-3 font-mono">Expertise</h2>
+                <h3 class="text-3xl font-extrabold tracking-tight">Technical Skills & Tools</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Languages & Core -->
+                <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400 text-xl"><i class="fa-solid fa-terminal"></i></div>
+                        <h4 class="text-xl font-bold text-zinc-200">Languages & Core</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>JavaScript / TypeScript</span>
+                                <span class="text-zinc-400 font-mono text-xs">90%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Python / C++</span>
+                                <span class="text-zinc-400 font-mono text-xs">85%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>HTML5 / CSS3</span>
+                                <span class="text-zinc-400 font-mono text-xs">95%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>SQL</span>
+                                <span class="text-zinc-400 font-mono text-xs">80%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400 text-xl"><i class="fa-solid fa-layer-group"></i></div>
+                        <h4 class="text-xl font-bold text-zinc-200">Frameworks & Libraries</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>React & Next.js</span>
+                                <span class="text-zinc-400 font-mono text-xs">90%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Node.js & Express</span>
+                                <span class="text-zinc-400 font-mono text-xs">85%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Tailwind CSS</span>
+                                <span class="text-zinc-400 font-mono text-xs">95%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Flask / FastAPI</span>
+                                <span class="text-zinc-400 font-mono text-xs">75%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Databases -->
+                <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400 text-xl"><i class="fa-solid fa-database"></i></div>
+                        <h4 class="text-xl font-bold text-zinc-200">Tools & Databases</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Git & GitHub</span>
+                                <span class="text-zinc-400 font-mono text-xs">90%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>PostgreSQL & MongoDB</span>
+                                <span class="text-zinc-400 font-mono text-xs">80%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Docker & Vercel</span>
+                                <span class="text-zinc-400 font-mono text-xs">75%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-1 text-zinc-300">
+                                <span>Linux / Bash</span>
+                                <span class="text-zinc-400 font-mono text-xs">85%</span>
+                            </div>
+                            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-zinc-900/50 border-y border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-3 font-mono">Portfolio</h2>
+                <h3 class="text-3xl font-extrabold tracking-tight">Featured Projects</h3>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12">
+                <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-brand-600 text-zinc-950 shadow-sm" data-filter="all">All Projects</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800" data-filter="frontend">Frontend</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800" data-filter="ai">AI / Student</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="fullstack">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=Campus+Hub" alt="Campus Hub" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-950/80 text-brand-400 border border-zinc-800 backdrop-blur-sm">Full Stack</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-zinc-100">CampusStudy Hub</h4>
+                            <p class="text-sm text-zinc-400 line-clamp-2">A peer-to-peer study group finder and resource-sharing platform built for university students with real-time chat.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Next.js</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Tailwind</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">MongoDB</span>
+                        </div>
+                        <div class="pt-4 border-t border-zinc-800 flex justify-between items-center">
+                            <button onclick="openModal('CampusStudy Hub', 'An online platform designed to connect students in the same courses for collaborative study sessions, flashcard creation, and homework discussions. Built during the university fall hackathon.', 'https://github.com', 'https://example.com')" class="text-sm font-semibold text-brand-400 hover:underline flex items-center space-x-1">
+                                <span>View Details</span> <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                            </button>
+                            <div class="flex space-x-3 text-zinc-400">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-solid fa-external-link text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="ai">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=AI+NoteTaker" alt="AI NoteTaker" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-950/80 text-brand-400 border border-zinc-800 backdrop-blur-sm">AI / Student</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-zinc-100">LectureSumm AI</h4>
+                            <p class="text-sm text-zinc-400 line-clamp-2">An automated lecture transcription and summary generator powered by OpenAI API for fast revision before exams.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Python</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Flask</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">OpenAI API</span>
+                        </div>
+                        <div class="pt-4 border-t border-zinc-800 flex justify-between items-center">
+                            <button onclick="openModal('LectureSumm AI', 'Allows students to upload recorded lectures or audio notes to instantly receive structured outline summaries, glossary definitions, and practice quiz questions.', 'https://github.com', 'https://example.com')" class="text-sm font-semibold text-brand-400 hover:underline flex items-center space-x-1">
+                                <span>View Details</span> <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                            </button>
+                            <div class="flex space-x-3 text-zinc-400">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-solid fa-external-link text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="frontend">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=Algorhythm" alt="Algorhythm" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-950/80 text-brand-400 border border-zinc-800 backdrop-blur-sm">Frontend</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-zinc-100">AlgoViz Visualizer</h4>
+                            <p class="text-sm text-zinc-400 line-clamp-2">Interactive web-based visualization tool for classic data structures and sorting algorithms to help students learn CS concepts.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">JavaScript</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">HTML5 Canvas</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Tailwind</span>
+                        </div>
+                        <div class="pt-4 border-t border-zinc-800 flex justify-between items-center">
+                            <button onclick="openModal('AlgoViz Visualizer', 'An educational web utility that demonstrates sorting algorithms (Merge Sort, Quick Sort), graph traversals (BFS, DFS), and pathfinding algorithms with adjustable speeds and step-by-step explanations.', 'https://github.com', 'https://example.com')" class="text-sm font-semibold text-brand-400 hover:underline flex items-center space-x-1">
+                                <span>View Details</span> <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                            </button>
+                            <div class="flex space-x-3 text-zinc-400">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-solid fa-external-link text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-md flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="fullstack">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/18181b/22c55e?text=DevPortfolio" alt="DevPortfolio" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-950/80 text-brand-400 border border-zinc-800 backdrop-blur-sm">Full Stack</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-zinc-100">DevBlog Platform</h4>
+                            <p class="text-sm text-zinc-400 line-clamp-2">A markdown-powered blogging engine designed for student developers to publish technical articles and coding tutorials.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">React</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">Node.js</span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-zinc-800 text-zinc-300">PostgreSQL</span>
+                        </div>
+                        <div class="pt-4 border-t border-zinc-800 flex justify-between items-center">
+                            <button onclick="openModal('DevBlog Platform', 'Features syntax highlighting, commenting system, tag filtering, and view counters. Built to help students document their coding journey and share lessons learned.', 'https://github.com', 'https://example.com')" class="text-sm font-semibold text-brand-400 hover:underline flex items-center space-x-1">
+                                <span>View Details</span> <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                            </button>
+                            <div class="flex space-x-3 text-zinc-400">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400"><i class="fa-solid fa-external-link text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-3 font-mono">Timeline</h2>
+                <h3 class="text-3xl font-extrabold tracking-tight">Education & Experience</h3>
+            </div>
+
+            <div class="relative border-l border-zinc-800 ml-4 sm:ml-6 space-y-12">
+                <!-- Timeline Item 1 - Education -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-brand-600 border-4 border-zinc-950 flex items-center justify-center text-zinc-950 text-xs font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h4 class="text-xl font-bold text-zinc-100">B.S. in Computer Science</h4>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/30 w-fit font-mono">2023 — 2027 (Expected)</span>
+                        </div>
+                        <h5 class="text-sm font-semibold text-zinc-400">University of California, Berkeley</h5>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Relevant Coursework: Data Structures & Algorithms, Computer Architecture, Discrete Math, Database Systems, Software Engineering, and Operating Systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 - Experience -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-brand-600 border-4 border-zinc-950 flex items-center justify-center text-zinc-950 text-xs font-bold">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h4 class="text-xl font-bold text-zinc-100">Web Development Lead (Student Org)</h4>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/30 w-fit font-mono">2024 — Present</span>
+                        </div>
+                        <h5 class="text-sm font-semibold text-zinc-400">Berkeley Web Development Club</h5>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Organize weekly coding workshops on React and Tailwind CSS, lead collaborative open-source projects for campus non-profits, and mentor 40+ undergraduate members.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 - Experience -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-brand-600 border-4 border-zinc-950 flex items-center justify-center text-zinc-950 text-xs font-bold">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="p-6 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h4 class="text-xl font-bold text-zinc-100">Frontend Engineering Intern</h4>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/30 w-fit font-mono">Summer 2025</span>
+                        </div>
+                        <h5 class="text-sm font-semibold text-zinc-400">InnovateTech Solutions • San Francisco, CA</h5>
+                        <p class="text-sm text-zinc-400 leading-relaxed">
+                            Contributed to the main dashboard interface using React and TypeScript, optimized component rendering performance, and wrote comprehensive unit tests with Jest.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-zinc-900/50 border-t border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-400 tracking-widest uppercase mb-3 font-mono">Contact</h2>
+                <h3 class="text-3xl font-extrabold tracking-tight">Let's Connect</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-6">
+                        <h4 class="text-2xl font-bold text-zinc-100">Get in Touch</h4>
+                        <p class="text-sm text-zinc-400">I am currently looking for Summer Software Engineering Internship opportunities. Feel free to reach out for collaboration or just a friendly chat!</p>
+                        
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold uppercase tracking-wider text-zinc-500 font-mono">Email</h5>
+                                    <p class="text-sm font-semibold text-zinc-200">liam.chen@example.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold uppercase tracking-wider text-zinc-500 font-mono">Location</h5>
+                                    <p class="text-sm font-semibold text-zinc-200">Berkeley, California</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-zinc-300" for="name">Your Name</label>
+                                <input type="text" id="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm text-zinc-100">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-zinc-300" for="email">Your Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm text-zinc-100">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-zinc-300" for="subject">Subject</label>
+                            <input type="text" id="subject" required placeholder="Summer Internship / Project Inquiry" class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm text-zinc-100">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-zinc-300" for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Hi Liam, I'd love to chat about..." class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm resize-none text-zinc-100"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-zinc-950 font-semibold shadow-lg shadow-brand-500/20 transition-all text-center">
+                            Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <p class="text-sm text-zinc-500 font-mono">
+                &copy; 2026 Liam Chen. Built with Tailwind CSS & JavaScript.
+            </p>
+            <div class="flex space-x-6 text-zinc-400">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-lg"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-400 transition-colors text-lg"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-zinc-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-zinc-900 rounded-3xl max-w-lg w-full p-8 border border-zinc-800 shadow-2xl space-y-6 relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-zinc-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-zinc-100">Project Title</h3>
+            <p id="modal-desc" class="text-zinc-400 text-sm leading-relaxed">Project description goes here...</p>
+            <div class="flex items-center space-x-4 pt-4">
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-sm font-medium flex items-center space-x-2 text-zinc-200">
+                    <i class="fa-brands fa-github"></i> <span>GitHub Repo</span>
+                </a>
+                <a id="modal-live" href="#" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-zinc-950 text-sm font-semibold flex items-center space-x-2">
+                    <i class="fa-solid fa-external-link"></i> <span>Live Demo</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-zinc-900 text-zinc-100 px-6 py-4 rounded-2xl shadow-xl flex items-center space-x-3 border border-zinc-800">
+        <div class="text-brand-400 text-xl"><i class="fa-solid fa-circle-check"></i></div>
+        <div>
+            <h4 class="font-bold text-sm">Message Sent Successfully!</h4>
+            <p class="text-xs text-zinc-400">Thanks for reaching out. I'll get back to you soon.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Projects Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state on buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-zinc-950', 'shadow-sm');
+                    b.classList.add('bg-zinc-900', 'text-zinc-300', 'border', 'border-zinc-800');
+                });
+                btn.classList.add('bg-brand-600', 'text-zinc-950', 'shadow-sm');
+                btn.classList.remove('bg-zinc-900', 'text-zinc-300', 'border', 'border-zinc-800');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Functions
+        function openModal(title, desc, githubUrl, liveUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-github').href = githubUrl;
+            document.getElementById('modal-live').href = liveUrl;
+            
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal on click outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('project-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Contact Form Submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            // Clear form inputs
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('message').value = '';
+
+            // Show Toast Notification
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

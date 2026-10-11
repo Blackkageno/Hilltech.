@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Hilltech Admin Dashboard</title>
+        <link rel="stylesheet" href="admin.css">
+    </head>
+<body class="admin-body">
+<header class="admin-top">
+  <a href="index.html"><img src="hilltech-logo.png" alt="">HILLTECH</a>
+  <div>
+    <span id="adminEmail"></span>
+    <button id="logout">Logout</button>
+  </div>
+</header>
+<div class="admin-layout">
+<aside>
+  <a class="active" href="#dashboard">Dashboard</a>
+  <a href="#bookings">Bookings</a>
+  <a href="#enquiries">Enquiries</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="/">View Website ↗</a>
+</aside>
+<main class="admin-main">
+<section id="dashboard" class="admin-section">
+  <div class="admin-title"><div><p class="eyebrow">CONTROL CENTER</p><h1>Good to see you.</h1></div></div>
+  <div class="stats-grid">
+    <div><span>Bookings</span><b id="sBookings">—</b></div>
+    <div><span>Pending</span><b id="sPending">—</b></div>
+    <div><span>Enquiries</span><b id="sEnquiries">—</b></div>
+    <div><span>Portfolio</span><b id="sProjects">—</b></div>
+  </div>
+</section>
+<section id="bookings" class="admin-section">
+  <div class="section-title"><h2>Project bookings</h2><span>Latest requests</span></div>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>Client</th><th>Service</th><th>Location</th><th>Status</th><th></th></tr></thead><tbody id="bookingsTable"></tbody></table></div>
+</section>
+<section id="enquiries" class="admin-section">
+  <div class="section-title"><h2>Enquiries</h2><span>Contact messages</span></div>
+  <div class="table-wrap"><table><thead><tr><th>Client</th><th>Service</th><th>Message</th><th>Date</th></tr></thead><tbody id="enquiriesTable"></tbody></table></div>
+</section>
+<section id="portfolio" class="admin-section">
+  <div class="section-title"><h2>Portfolio</h2><span>Manage featured work</span></div>
+  <form id="portfolioForm" class="admin-form">
+    <input name="title" placeholder="Project title" required>
+    <input name="category" placeholder="Category" required>
+    <input name="description" placeholder="Short description" required>
+    <input type="file" name="img" id="projectImageInput" accept="image/*" required>
+    <label class="check"><input type="checkbox" name="featured"> Featured</label>
+    <button type="submit">Add project</button>
+  </form>
+  <div id="portfolioAdmin" class="portfolio-admin"></div>
+</section>
+</main></div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>
